@@ -1,0 +1,42 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <head>
+	
+        <title>plug jquery develop</title>
+        <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="js/common.plug.js"></script>
+    </head>
+    
+    <body>
+moreAjax of Test
+
+<script>
+	obj = {};
+	obj.sync = false;
+	obj.num = 100;
+	obj.maxNum = 10;
+	obj.data = 'username=laobi&type=ss';
+	obj.url = 'ajax.test.php';
+	
+/**
+ *队列式请求
+ **/
+	$(function(){
+		$("#loading").show();
+		jQuery.mostAjax.runAjax(obj);
+		$("#loading").hide();
+	});
+	
+	
+
+	function addEvent(num){
+		if(typeof(num)!== undefined){
+			$("#num").html(num);
+		}
+	}
+</script>
+
+<span id='loading' style='display:none'><img src='images/loading.gif' /></span>
+<p id='num' style='color:red'>0</p>
+    </body>
+</html>
